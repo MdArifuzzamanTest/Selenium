@@ -1,0 +1,43 @@
+//Created by Md Arifuzzaman for Google Chrome
+//Created 5/17/2020
+//Project#{01}
+//For auto log in to Github by just replacing email and password.
+//This Code will login to Github automatically and click on a repo where you want to add your code. 
+//I created this to save me the extra step to log into github and clicking on the repo.
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class GitHubAutoLoginAndClickRepo2 {
+
+  public static void main(String[] args) {
+  
+  
+      
+          System.setProperty("webdriver.chrome.driver", "//Users//mdarifuzzaman//Documents//chromedriver"); //this is the template for all browser just replace the driver
+              
+                  WebDriver driver=new ChromeDriver();
+                      
+                          driver.get("https://github.com");// this goes to the web page
+                          
+                          
+                              driver.findElement(By.xpath("/html/body/div[1]/header/div/div[2]/div[2]/a[1]")).click();//this will click on the Sign in Button
+                                  driver.findElement(By.xpath("//*[@id=\"login_field\"]")).sendKeys("arif2020r@gmail.com");//this will input your email
+                                      driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("Thisistest2020");//this will input your password
+                                          driver.findElement(By.xpath("//*[@id=\"login\"]/form/div[4]/input[9]")).click();//this will click on Sign In
+                                              driver.findElement(By.xpath("//*[@id=\"repos-container\"]/ul/li[1]/div/a/span[2]")).click();// this will click on your repo make sure to change this.
+                                                  driver.findElement(By.xpath("//*[@id=\"js-repo-pjax-container\"]/div[2]/div/div[3]/div[2]/form/button")).click();
+                                                      driver.findElement(By.xpath("//*[@id=\"js-repo-pjax-container\"]/div[2]/div/div/form[2]/div[1]/span/input")).click();
+                                                          driver.findElement(By.xpath("//*[@id=\"js-repo-pjax-container\"]/div[2]/div/div/form[2]/div[1]/span/input")).sendKeys("GithubAutoLogin");
+                                                              driver.findElement(By.xpath("//*[@id=\"js-repo-pjax-container\"]/div[2]/div/div/form[2]/div[5]/div[2]/div/div[5]/div[1]/div/div/div/div[5]/div/pre")).click();
+                                                                  driver.findElement(By.xpath("//*[@id=\"js-repo-pjax-container\"]/div[2]/div/div/form[2]/div[5]/div[2]/div/div[5]/div[1]/div/div/div/div[5]/div/pre")).sendKeys("This is a test");
+                                                                  
+                                                                  
+                                                                    
+                                                                      //the purpose of this project is to eliminate clicking steps and saving you time :)
+                                                                        //Project Created By Md Arifuzzaman
+                                                                          //Date: 05/17/2020
+                                                                            }
+                                                                            
+                                                                            }
